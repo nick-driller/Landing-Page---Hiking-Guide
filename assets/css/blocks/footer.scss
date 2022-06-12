@@ -1,0 +1,116 @@
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include breakpoint($notebook3-bp) {
+    flex-direction: column;
+  }
+}
+
+.row__left {
+  max-width: 61.2%;
+  flex-grow: grow;
+
+  @include breakpoint($notebook3-bp) {
+    order: 2;
+    max-width: 100%;
+  }
+}
+
+.row__logo {
+  font-family: "Cardo", serif;
+  font-size: 2.8rem;
+  margin-bottom: 1.8rem;
+
+  @include breakpoint($notebook3-bp) {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+
+.row__description {
+  max-width: 30.3rem;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-weight: 700;
+
+  @include breakpoint($notebook2-bp) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint($notebook3-bp) {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.row__right {
+  width: 56.6rem;
+
+  @include breakpoint($notebook3-bp) {
+    order: 1;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 3rem;
+  }
+}
+
+.row__right__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subrow__left {
+  max-width: 50%;
+  flex-grow: grow;
+}
+
+.row__title {
+  color: $gold;
+  font-size: 2.4rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 2rem;
+
+  @include breakpoint($notebook2-bp) {
+    font-size: 2rem;
+  }
+}
+
+.row__link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.8rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  cursor: pointer;
+
+  opacity: 0.7;
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include breakpoint($notebook2-bp) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint($notebook3-bp) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.subrow__right {
+  max-width: 50%;
+  flex-grow: grow;
+}
+
+.row__link {
+  display: block;
+}

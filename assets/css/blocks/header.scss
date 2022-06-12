@@ -1,0 +1,311 @@
+// Main Header
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: inherit;
+
+  @include breakpoint($mobile-bp) {
+    background-color: $primary-sidebar;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    transition: background-color 0.2s ease-in-out;
+
+    .show-sidebar & {
+      background-color: $primary-sidebar-active;
+    }
+  }
+}
+
+.header__logo {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.9;
+  transition: opacity 0.4s ease-in-out;
+
+  @include breakpoint($mobile-bp) {
+    padding: 1rem;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 30rem;
+  height: 100%;
+  align-items: center;
+
+  @include breakpoint($mobile-bp) {
+    display: none;
+    transition: display 0.2s ease-in-out;
+
+    .show-sidebar & {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 2rem;
+      transition: display 0.2s ease-in-out;
+    }
+  }
+}
+
+.nav__link {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &--active {
+    opacity: 1;
+  }
+
+  @include breakpoint($mobile-bp) {
+    .show-sidebar & {
+      padding: 1rem;
+      font-size: 2.2rem;
+    }
+  }
+}
+
+.account {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include breakpoint($mobile-bp) {
+    display: none;
+    transition: display 0.2s ease-in-out;
+
+    .show-sidebar & {
+      display: flex;
+      padding-bottom: 1rem;
+      transition: display 0.2s ease-in-out;
+    }
+  }
+}
+
+.account__name {
+  padding-left: 0.9rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  @include breakpoint($mobile-bp) {
+    .show-sidebar & {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+// Follow Us
+
+.leftBar {
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 0%;
+  transform: translate(-30%, -50%) rotate(90deg);
+
+  @include breakpoint($mobile-bp) {
+    display: none;
+  }
+}
+
+.leftBar__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.leftBar__text {
+  margin-right: 1.5rem;
+}
+
+.leftBar__icon {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.leftBar__insta {
+  display: inline-block;
+  transform: rotate(-90deg);
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    transform: rotate(-90deg) scale(1.4, 1.4);
+  }
+}
+
+.leftBar__twitter {
+  display: inline-block;
+  transform: rotate(-90deg);
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    transform: rotate(-90deg) scale(1.4, 1.4);
+  }
+}
+
+// Start 01 02 03
+
+.rightBar {
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  right: 1%;
+  transform: translate(0, -50%);
+
+  @include breakpoint($mobile-bp) {
+    display: none;
+  }
+}
+
+.rightBar__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.rightBar__item {
+  display: flex;
+  justify-content: flex-end;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 60px;
+    background-color: $white;
+    opacity: 0.5;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 2.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  &--active {
+    color: $white;
+    opacity: 1;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: 60px;
+      background-color: $white;
+      opacity: 1;
+      position: relative;
+      vertical-align: middle;
+      margin-left: 2.9rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+// Burger
+
+.burger {
+  display: none;
+
+  width: 30px;
+  height: 20px;
+  padding: 0;
+
+  background: none;
+  border: none;
+  font-size: 0;
+  color: transparent;
+  z-index: 100;
+
+  //transform: translateY(-50%);
+
+  @include breakpoint($mobile-bp) {
+    display: inline-block;
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  &:before,
+  &:after,
+  span {
+    @include breakpoint($mobile-bp) {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      position: absolute;
+      left: 0;
+      transition: opacity 0.2s linear, transform 0.2s linear;
+      z-index: 100;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+  }
+
+  &:before {
+    top: 0;
+    transition: top 0.2s linear;
+  }
+
+  &:after {
+    top: 100%;
+    transition: top 0.2s linear;
+  }
+
+  .show-sidebar & {
+    span {
+      opacity: 0;
+    }
+
+    &:before,
+    &:after {
+      top: 50%;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}

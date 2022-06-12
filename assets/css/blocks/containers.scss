@@ -1,0 +1,52 @@
+.header__container {
+  width: 100%;
+  max-width: 176rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 0;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  @include breakpoint($notebook3-bp) {
+    max-width: 90rem;
+  }
+
+  @include breakpoint($mobile-bp) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    transform: translate(0%, 0%);
+    z-index: 11;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 146.2rem;
+  margin: 0 auto;
+
+  @include breakpoint($notebook1-bp) {
+    padding: 0 7rem;
+  }
+
+  @include breakpoint($notebook2-bp) {
+    max-width: 126.2rem;
+  }
+
+  @include breakpoint($notebook3-bp) {
+    max-width: 90rem;
+  }
+
+  @include breakpoint($tablet-bp) {
+    max-width: 52rem;
+    padding: 0;
+  }
+
+  @include breakpoint($mobile-bp) {
+    max-width: 57rem;
+    padding: 0 2rem;
+  }
+}

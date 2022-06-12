@@ -1,0 +1,54 @@
+@import "vars";
+@import "mixins";
+@import "vendor/reset.scss";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: $primary;
+  font-size: 1.8rem;
+  color: $white;
+  font-family: "Roboto", sans-serif;
+  //font-family: "Cardo", serif;
+  line-height: 3.2rem;
+
+  background: url(../images/logo/intro.png) $primary no-repeat 0 0/100% auto;
+
+  @include breakpoint($mobile-bp) {
+    &.no-scroll {
+      overflow: hidden;
+    }
+  }
+
+  @include breakpoint($tablet-bp) {
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.page__mask {
+  @include breakpoint($mobile-bp) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000000, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+}
+
+/* Blocks */
+
+@import "blocks/header";
+@import "blocks/containers";
+@import "blocks/intro";
+@import "blocks/newsfeed";
+@import "blocks/footer";

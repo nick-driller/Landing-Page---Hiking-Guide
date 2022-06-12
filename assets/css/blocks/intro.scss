@@ -1,0 +1,93 @@
+.intro__background {
+  //background: url(../images/logo/intro.png) $primary no-repeat 0 0/100% auto;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  //background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.intro__content {
+  max-width: 95rem;
+
+  @include breakpoint($notebook3-bp) {
+    max-width: 70rem;
+  }
+
+  @include breakpoint($tablet-bp) {
+    max-width: 52rem;
+  }
+
+  @include breakpoint($mobile-bp) {
+    padding: 0 2rem;
+  }
+}
+
+.intro__header {
+  color: $gold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 72px;
+    height: 2px;
+    background-color: $gold;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 2.9rem;
+  }
+
+  @include breakpoint($tablet-bp) {
+    font-size: 1.6rem;
+  }
+}
+
+.intro__title {
+  font-family: "Cardo", serif;
+  font-size: 8.8rem;
+  line-height: 1.2;
+  margin: 2rem 0;
+
+  @include breakpoint($notebook3-bp) {
+    font-size: 5.8rem;
+  }
+
+  @include breakpoint($tablet-bp) {
+    font-size: 4.8rem;
+  }
+}
+
+.intro__subtitle {
+  display: inline;
+}
+
+.intro__subtitle__inner {
+  display: flex;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.intro__text {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  text-transform: none;
+}
+
+.intro__link {
+  display: inline-block;
+  color: inherit;
+  text-transform: none;
+  cursor: pointer;
+}
